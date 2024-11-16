@@ -42,7 +42,7 @@ jobs:
           push: true
           tags: |
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:ubuntu-podman
-            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:ubuntu-22.04-podman
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:ubuntu-24.04-podman
 
       # This step generates an artifact attestation for the image, which is an unforgeable statement about where and how it was built. It increases supply chain security for people who consume the image. For more information, see "[AUTOTITLE](/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds)."
       - name: Generate artifact attestation
