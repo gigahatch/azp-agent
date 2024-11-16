@@ -10,6 +10,9 @@ WORKDIR /azp/
 
 COPY ./start.sh ./
 RUN chmod +x ./start.sh
+COPY ./docker /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker
+RUN touch /etc/containers/nodocker
 
 # Create agent user and set up home directory
 RUN useradd -m -d /home/agent agent
