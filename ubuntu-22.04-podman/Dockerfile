@@ -17,6 +17,8 @@ RUN touch /etc/containers/nodocker
 # Create agent user and set up home directory
 RUN useradd -m -d /home/agent agent
 RUN chown -R agent:agent /azp /home/agent
+RUN echo agent:10000:10000 > /etc/subuid; \
+    echo agent:10000:10000 > /etc/subgid;
 
 USER agent
 # Another option is to run the agent as root.
