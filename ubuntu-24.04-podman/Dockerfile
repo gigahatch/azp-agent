@@ -14,8 +14,8 @@ COPY ./docker /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker
 RUN touch /etc/containers/nodocker
 
-RUN echo "agent:10000:65536" > /etc/subuid && \
-    echo "agent:10000:65536" > /etc/subgid
+RUN echo "agent:2000:5000" > /etc/subuid && \
+    echo "agent:2000:5000" > /etc/subgid
 
 # Create agent user and set up home directory
 RUN useradd -m -d /home/agent agent
