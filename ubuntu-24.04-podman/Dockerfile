@@ -4,7 +4,7 @@ ENV TARGETARCH="linux-x64"
 
 RUN apt update
 RUN apt upgrade -y
-RUN apt install -y curl git jq libicu70 podman
+RUN apt install -y curl git jq libicu70 podman uidmap
 
 WORKDIR /azp/
 
@@ -14,11 +14,12 @@ COPY ./docker /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker
 RUN touch /etc/containers/nodocker
 
+RUN echo "agent:10000:65536" > /etc/subuid && \
+    echo "agent:10000:65536" > /etc/subgid
+
 # Create agent user and set up home directory
 RUN useradd -m -d /home/agent agent
 RUN chown -R agent:agent /azp /home/agent
-RUN echo agent:10000:10000 > /etc/subuid; \
-    echo agent:10000:10000 > /etc/subgid;
 
 USER agent
 # Another option is to run the agent as root.
