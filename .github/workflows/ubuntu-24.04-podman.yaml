@@ -38,7 +38,7 @@ jobs:
         id: push
         uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
         with:
-          context: ubuntu-22.04-podman
+          context: ubuntu-24.04-podman
           push: true
           tags: |
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:ubuntu-podman
