@@ -4,7 +4,7 @@ ENV TARGETARCH="linux-x64"
 
 RUN apt update
 RUN apt upgrade -y
-RUN apt install -y curl git jq libicu70 podman uidmap
+RUN apt install -y curl git jq libicu74 podman uidmap
 
 WORKDIR /azp/
 
