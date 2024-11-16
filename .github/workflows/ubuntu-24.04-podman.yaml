@@ -1,5 +1,5 @@
 #
-name: Publish ubuntu-22.04-podman
+name: Publish ubuntu-24.04-podman
 
 # Configures this workflow to run every time a change is pushed to the branch called `release`.
 on:
